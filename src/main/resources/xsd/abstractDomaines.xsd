@@ -1,0 +1,15 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://guinardsolutions.com/mp/gs_ws" targetNamespace="http://guinardsolutions.com/mp/gs_ws"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="abstractDomaineInfo" abstract="true">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="ref" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
+            <xs:element name="cycle" type="xs:string" />
+            <xs:element name="abstractDomaine" type="tns:abstractDomaineInfo" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

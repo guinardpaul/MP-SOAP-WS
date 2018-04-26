@@ -1,0 +1,116 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://guinardsolutions.com/mp/gs_ws" targetNamespace="http://guinardsolutions.com/mp/gs_ws"
+           elementFormDefault="qualified">
+
+    <xs:element name="getCompetenceByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getCompetenceByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfo" type="tns:competenceInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="competenceInfo">
+        <xs:complexContent>
+            <xs:extension base="tns:abstractDomaineInfo" />
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="getAllCompetencesRequest">
+        <xs:complexType />
+    </xs:element>
+    <xs:element name="getAllCompetencesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfos" type="tns:competenceInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllCompetencesByDomaineRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="domaineId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllCompetencesByDomaineResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfos" type="tns:competenceInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllCompetencesByCycleRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cycle" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllCompetencesByCycleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfos" type="tns:competenceInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addCompetenceRequest">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="tns:abstractDomaineInfo" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addCompetenceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfo" type="tns:competenceInfo" />
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateCompetenceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfo" type="tns:competenceInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateCompetenceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceInfo" type="tns:competenceInfo" />
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCompetenceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteCompetenceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

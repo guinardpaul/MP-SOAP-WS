@@ -1,0 +1,209 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://guinardsolutions.com/mp/gs_ws"
+           targetNamespace="http://guinardsolutions.com/mp/gs_ws"
+           elementFormDefault="qualified">
+
+    <xs:element name="getResultatByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getResultatByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfo" type="tns:resultatInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="resultatInfo">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="result" type="xs:string" />
+            <xs:element name="competence" type="tns:competenceInfo" />
+            <xs:element name="eleve" type="tns:eleveInfo" />
+            <xs:element name="trimestre" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getAllResultatsRequest">
+        <xs:complexType />
+    </xs:element>
+    <xs:element name="getAllResultatsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByEleveRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="eleveId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByEleveResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByCompetenceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByCompetenceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByEleveAndCompetenceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceId" type="xs:int" />
+                <xs:element name="eleveId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByEleveAndCompetenceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByTrimestreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="trimestre" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByTrimestreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByEleveAndTrimestreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="trimestre" type="xs:string" />
+                <xs:element name="eleveId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByEleveAndTrimestreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByCompetenceAndTrimestreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceId" type="xs:int" />
+                <xs:element name="trimestre" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByCompetenceAndTrimestreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllResultatsByEleveAndCompetenceAndTrimestreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="competenceId" type="xs:int" />
+                <xs:element name="eleveId" type="xs:int" />
+                <xs:element name="trimestre" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAllResultatsByEleveAndCompetenceAndTrimestreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfos" type="tns:resultatInfo"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addResultatRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="xs:string" />
+                <xs:element name="competence" type="tns:competenceInfo" />
+                <xs:element name="eleve" type="tns:eleveInfo" />
+                <xs:element name="trimestre" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addResultatResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfo" type="tns:resultatInfo" />
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateResultatRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfo" type="tns:resultatInfo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateResultatResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatInfo" type="tns:resultatInfo"/>
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteResultatRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resultatId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteResultatResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

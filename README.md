@@ -1,2 +1,2 @@
-# MP-SOAP-WS
-MP-SOAP-WS
+# MP-Soap-WS
+MP Soap WS
